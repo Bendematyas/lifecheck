@@ -1,0 +1,30 @@
+export const PRESET_INCOME_CATEGORIES = [
+  { name: 'Pszicho praxis', color: '#6366f1' },
+  { name: 'Iskola', color: '#8b5cf6' },
+  { name: 'Csengery albérlet', color: '#ec4899' },
+  { name: 'Workshop (online)', color: '#14b8a6' },
+  { name: 'Workshop (offline)', color: '#0ea5e9' },
+  { name: 'Céges együttműködés', color: '#f97316' },
+  { name: 'Szakkör', color: '#eab308' },
+  { name: 'Születésnap', color: '#84cc16' },
+  { name: 'Zuglói tábor', color: '#22c55e' },
+  { name: 'EduFun', color: '#06b6d4' },
+  { name: 'Engame', color: '#a855f7' },
+  { name: 'Egyéb bevétel', color: '#94a3b8' },
+]
+
+export const PRESET_EXPENSE_CATEGORIES = [
+  { name: 'Adó', color: '#ef4444' },
+  { name: 'Élet / megélhetés', color: '#f97316' },
+  { name: 'Pszicho franchise', color: '#eab308' },
+  { name: 'Ülések leadandó', color: '#84cc16' },
+  { name: 'Marketing', color: '#06b6d4' },
+  { name: 'Könyvelő', color: '#6366f1' },
+  { name: 'Módszerspec', color: '#8b5cf6' },
+  { name: 'Weboldal', color: '#ec4899' },
+  { name: 'IPA', color: '#14b8a6' },
+  { name: 'Kamarai tagság', color: '#0ea5e9' },
+  { name: 'Sybell', color: '#f43f5e' },
+  { name: 'Domain', color: '#a78bfa' },
+  { name: 'Egyéb kiadás', color: '#94a3b8' },
+]
