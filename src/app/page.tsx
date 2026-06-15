@@ -3,7 +3,7 @@ import { getAccounts, getMonthlyTotals, getUpcomingRecurring } from '@/lib/queri
 import { TrendingUp, TrendingDown, Wallet, Plus } from 'lucide-react'
 import Link from 'next/link'
 
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 export default async function Dashboard() {
   const [accounts, { income, expense }, upcoming] = await Promise.all([
