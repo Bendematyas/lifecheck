@@ -1,7 +1,8 @@
 import { getCashFlowForecast } from '@/lib/cashflow'
 import { formatCurrency } from '@/lib/utils'
 import { CashFlowChart } from './CashFlowChart'
-import { AlertTriangle, TrendingUp, TrendingDown } from 'lucide-react'
+import { AlertTriangle, TrendingUp, TrendingDown, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
 
@@ -32,20 +33,23 @@ export default async function Riportok() {
               className={`rounded-xl p-4 ${isNegative ? 'bg-red-950 border border-red-800' : isLow ? 'bg-yellow-950 border border-yellow-800' : 'bg-gray-900'}`}
             >
               {/* Fejléc */}
-              <div className="flex items-center justify-between mb-3">
+              <Link href={`/riportok/${m.month}`} className="flex items-center justify-between mb-3 group">
                 <div className="flex items-center gap-2">
-                  <h2 className="font-semibold">{m.label}</h2>
+                  <h2 className="font-semibold group-hover:text-indigo-300 transition-colors">{m.label}</h2>
                   {(isNegative || isLow) && (
                     <AlertTriangle size={14} className={isNegative ? 'text-red-400' : 'text-yellow-400'} />
                   )}
                 </div>
-                <div className="text-right">
-                  <p className="text-xs text-gray-400">Záró egyenleg</p>
-                  <p className={`font-bold ${isNegative ? 'text-red-400' : isLow ? 'text-yellow-400' : 'text-white'}`}>
-                    {formatCurrency(m.closingBalance)}
-                  </p>
+                <div className="flex items-center gap-2">
+                  <div className="text-right">
+                    <p className="text-xs text-gray-400">Záró egyenleg</p>
+                    <p className={`font-bold ${isNegative ? 'text-red-400' : isLow ? 'text-yellow-400' : 'text-white'}`}>
+                      {formatCurrency(m.closingBalance)}
+                    </p>
+                  </div>
+                  <ChevronRight size={16} className="text-gray-600 group-hover:text-indigo-400 transition-colors" />
                 </div>
-              </div>
+              </Link>
 
               {/* Bevétel / Kiadás sor */}
               <div className="grid grid-cols-2 gap-2 mb-3">
